@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.testng:testng:7.1.0'
+    testCompile 'com.codeborne:selenide:4.9.1'
+}
+
+test {
+    useTestNG()
+}
