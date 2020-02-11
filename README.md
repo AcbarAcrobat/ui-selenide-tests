@@ -1,11 +1,8 @@
 # ui-selenide-tests
 Sample test for Evotor
 
-If you installed JDK + Gradle:
+Install JDK + Gradle on your machine:
 
-Go to /path/to/ui-selenide-test
-$ gradle init
-press enter
+Go to /path/to/ui-selenide-test 
 
-When projetct is initialized:
-$gradle build
+$ gradle build
