@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -16,11 +17,13 @@ public class AddProductTest {
   @Test
   public void FirstMethodAdd() throws Exception
   {
-    $(By.xpath("//header-basket-button[contains(@class, 'basket')]")).click();
-    $(By.xpath("//*[contains(text(), 'Добавьте')]")).click();
-    $(By.xpath("//*[contains(text(), 'Обмен с 1С') and contains(@class, 'ng-star-inserted')]")).click();
-    $(By.xpath("//*[contains(@class, 'app-category__card ng-star-inserted')][1]")).click();
-    $(By.xpath("//*[contains(@class, 'evo-button_green')]")).click();
+    $(By.cssSelector(".basket > .wrapper")).click();
+    $(By.cssSelector(".basket-empty__button")).click();
+//    $(By.cssSelector(".categories > Обмен с 1С")).click();
+    $(By.xpath("//a[contains(@class, 'categories__item')][23]")).click();
+    $(By.xpath("//app-card[.//h3[@class = 'app-title' and contains(.,'Интеграция 1С 8')]]")).click();
+    $(By.cssSelector(".plan-item-controls__basket-button")).click();
+    $(By.xpath("//*[contains(@class,'basket__list-item')]")).shouldBe(Condition.visible);
   }
 
   @AfterTest
