@@ -19,7 +19,7 @@ public class AddProductTest {
   {
     setBasket();
     addProduct();
-    set1CInMenu();
+    goToCategory("Обмен с 1С");
     selectProductInList();
     goToBasketAfter();
     checkProductInBasket();
@@ -36,9 +36,10 @@ public class AddProductTest {
     $(By.cssSelector(".basket-empty__button")).click();
   }
 
-  public void set1CInMenu()
+  public void goToCategory(String catName)
   {
-    $(By.xpath("//a[contains(@class, 'categories__item')][23]")).click();
+    String xpath = String.format("//a[contains(concat(' ', normalize-space(@class), ' '), ' categories__item ')][contains(., '%s')]", catName);
+    $(By.xpath(xpath)).click();
   }
 
   public void selectProductInList()
