@@ -11,7 +11,7 @@ public class AddProductTest {
   @BeforeTest
   public void setUp()
   {
-    open("https://market.evotor.ru");
+    open(url);
   }
 
   @Test
